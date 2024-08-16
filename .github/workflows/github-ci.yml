@@ -24,7 +24,7 @@ jobs:
         run: sudo npm install -g newman-reporter-htmlextra
 
       - name: Executar collection
-        run: newman run ./ServerRest-CI.json -e ./ServerRest.env.json --reporters cli, -r htmlextra --reporter-htmlextra-export ./results/Report.html
+        run: newman run ./server_rest.ci.json -e ./server_rest.env.json --reporters cli, -r htmlextra --reporter-htmlextra-export ./results/Report.html
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
