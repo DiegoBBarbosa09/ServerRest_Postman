@@ -1,9 +1,9 @@
 
 {
 	"info": {
-    "name": "ServerRest",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
+    	"name": "ServerRest",
+    	"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  	},
 	"id": "14c39432-7026-48da-a381-b8e91f7031a5",
 	"name": "ServerRest",
 	"timestamp": "2024-08-16T15:32:41.783Z",
