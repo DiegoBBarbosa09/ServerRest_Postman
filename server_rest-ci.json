@@ -1,144 +1,63 @@
-
 {
 	"info": {
-    	"name": "ServerRest",
-    	"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  	},
-	"id": "14c39432-7026-48da-a381-b8e91f7031a5",
-	"name": "ServerRest",
-	"timestamp": "2024-08-16T15:32:41.783Z",
-	"collection_id": "21447931-5b7ecede-e878-46d7-9010-3a85445b2e60",
-	"folder_id": 0,
-	"environment_id": "21447931-f7c42d55-ab6a-4431-970c-a300a0867952",
-	"totalPass": 7,
-	"delay": 0,
-	"persist": true,
-	"status": "finished",
-	"startedAt": "2024-08-16T15:32:39.911Z",
-	"totalFail": 0,
-	"results": [
-		{
-			"id": "e29f09ac-e03a-4d3a-843b-12d45701ee1c",
-			"name": "Login - Sucesso",
-			"url": "https://serverest.dev/login",
-			"time": 449,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"validação estrutura Login com sucesso para gerar token": true,
-				"Login com Sucesso status code 200": true
-			},
-			"testPassFailCounts": {
-				"validação estrutura Login com sucesso para gerar token": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Login com Sucesso status code 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				449
-			],
-			"allTests": [
-				{
-					"validação estrutura Login com sucesso para gerar token": true,
-					"Login com Sucesso status code 200": true
-				}
-			]
-		},
-		{
-			"id": "66b7a440-b43c-462c-a06d-b09524652c75",
-			"name": "Login - Email invalido",
-			"url": "https://serverest.dev/login",
-			"time": 211,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status code is 400": true,
-				"Email invalido": true
-			},
-			"testPassFailCounts": {
-				"Status code is 400": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Email invalido": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				211
-			],
-			"allTests": [
-				{
-					"Status code is 400": true,
-					"Email invalido": true
-				}
-			]
-		},
-		{
-			"id": "d4008765-24e4-40e6-b420-8960328c5681",
-			"name": "Login - Unauthorized",
-			"url": "https://serverest.dev/login",
-			"time": 269,
-			"responseCode": {
-				"code": 401,
-				"name": "Unauthorized"
-			},
-			"tests": {
-				"Status code is 401 Unauthorized": true,
-				"Email ou senha invalidos": true,
-				"validação schema login Unauthorized": true
-			},
-			"testPassFailCounts": {
-				"Status code is 401 Unauthorized": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Email ou senha invalidos": {
-					"pass": 1,
-					"fail": 0
-				},
-				"validação schema login Unauthorized": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				269
-			],
-			"allTests": [
-				{
-					"Status code is 401 Unauthorized": true,
-					"Email ou senha invalidos": true,
-					"validação schema login Unauthorized": true
-				}
-			]
-		}
-	],
-	"count": 1,
-	"totalTime": 929,
-	"collection": {
-		"requests": [
+	  "name": "ServerRest",
+	  "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	  {
+		"name": "Login - Sucesso",
+		"request": {
+		  "method": "POST",
+		  "url": "https://serverest.dev/login",
+		  "body": {
+			"mode": "raw",
+			"raw": "{\"email\": \"{{email_valido}}\", \"password\": \"{{senha_valida}}\"}"
+		  },
+		  "header": [
 			{
-				"id": "e29f09ac-e03a-4d3a-843b-12d45701ee1c",
-				"method": "POST"
-			},
-			{
-				"id": "66b7a440-b43c-462c-a06d-b09524652c75",
-				"method": "POST"
-			},
-			{
-				"id": "d4008765-24e4-40e6-b420-8960328c5681",
-				"method": "POST"
+			  "key": "Content-Type",
+			  "value": "application/json"
 			}
-		]
-	}
-}
+		  ]
+		},
+		"response": []
+	  },
+	  {
+		"name": "Login - Email invalido",
+		"request": {
+		  "method": "POST",
+		  "url": "https://serverest.dev/login",
+		  "body": {
+			"mode": "raw",
+			"raw": "{\"email\": \"{{email_invalido}}\", \"password\": \"{{senha_valida}}\"}"
+		  },
+		  "header": [
+			{
+			  "key": "Content-Type",
+			  "value": "application/json"
+			}
+		  ]
+		},
+		"response": []
+	  },
+	  {
+		"name": "Login - Unauthorized",
+		"request": {
+		  "method": "POST",
+		  "url": "https://serverest.dev/login",
+		  "body": {
+			"mode": "raw",
+			"raw": "{\"email\": \"{{email_valido}}\", \"password\": \"{{senha_invalida}}\"}"
+		  },
+		  "header": [
+			{
+			  "key": "Content-Type",
+			  "value": "application/json"
+			}
+		  ]
+		},
+		"response": []
+	  }
+	]
+  }
+  
